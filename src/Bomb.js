@@ -1,1 +1,33 @@
+import React from "react";
+
 // your Bomb code here!
+class Bomb extends React.Component{
+    
+    
+    constructor(props) { //props that the component gets from its parent
+        super()
+        
+        this.state = { //define initial state with a key of 'someKey' set to the 'someValue' prop
+        secondsLeft: props.initialCount
+    }
+}
+render(){
+    const message = this.state.secondsLeft === 0 ? 'Boom!' : `${this.state.secondsLeft} seconds left before I go boom!`;
+
+        // debugger
+    // {if (this.state.secondsLeft === 0){
+    //     const message = 'Boom!'
+    // }else{
+    //     const message =  `${this.state.secondsLeft} seconds left before I go boom!`
+    // }
+    // }
+
+        return(<div>{message}</div>)
+      }
+
+
+
+
+}
+
+export default Bomb;
